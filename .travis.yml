@@ -1,0 +1,16 @@
+matrix:
+  include:
+    - os: linux
+      language: node_js
+      node_js:
+        - "7"
+    - os: osx
+      language: node_js
+      node_js:
+        - "7"
+  
+install:
+  - npm install
+
+script:
+  - npm run dist
