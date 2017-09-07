@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Deposito Legale | Book Deposit</title>
+  <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="node_modules/font-awesome/css/font-awesome.css" rel="stylesheet">
+  <style>
+    html,
+    body {
+      font-size: 0.9em;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    .top {
+      position: fixed;
+      display: table;
+      top: 0;
+      left: 0;
+      height: 40px;
+      padding: 20px;
+      margin: auto 0;
+      background: #FFF;
+      color: #000;
+      min-width: 100vh;
+      overflow-y: hidden;
+      width: 100%;
+      z-index: 1024;
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, .8);
+      clear: both;
+    }
+
+    #metadata {
+      margin-top: 150px;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
+    .well {
+      border: none;
+      background-color: #FFF;
+    }
+
+    label.checkbox-label input[type=checkbox] {
+      position: relative;
+      vertical-align: text-bottom;
+      bottom: 1px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="top">
+    <div style="display: inline-block; vertical-align: top; margin-right: 10px;">
+      <img src="images/depositolegale.png" alt="depositolegale">
+    </div>
+    <div id="dropbox" style="margin-left:30px; padding:30px; border: 4px dotted #CCC; display: inline-block;" class="text-center">
+      Trascina qui il file del libro (epub o pdf)
+    </div>
+
+    <div id="reveal" style="visibility: hidden; padding:5px; display: inline-block;">
+      <p id="uploaded"></p>
+      <p id="sha1"></p>
+      <button id="create_bag" type="button" class="btn btn-danger btn-sm" disabled>crea bag</button>
+      <span id='valid_indicator' class='label'></span>
+    </div>
+  </div>
+
+  <div id="metadata">
+    <!-- <span id='valid_indicator' class='label'></span> -->
+    <div id="editor_holder"></div>
+
+    <div id="text_extraction">
+      <h3>Full text extraction</h3>
+      <input type="checkbox" id="allow_text_extraction" value="allow_text_extraction">
+      <label>Acconsento all'estrazione del testo per l'indicizzazione e la ricerca full-text</label>
+    </div>
+    
+    <div id="confirm_message" style="visibility: hidden;"><br><br>La bag è stata creata con successo in <a id="opendesktop" href="#">Desktop/BNCF-Bookdeposit</a> ed è pronta per
+      essere inviata all'api di deposito.<br><br> Chiudi il programma oppure <a id="reload" href="#">crea</a> una nuova bag.
+    </div>
+  </div>
+
+  <script>
+    window.$ = window.jQuery = require('jquery');
+  </script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="node_modules/json-editor/dist/jsoneditor.min.js"></script>
+  <script src="renderer.js"></script>
+
+</body>
+
+</html>

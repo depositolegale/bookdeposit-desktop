@@ -1,0 +1,43 @@
+{
+  "name": "bncf-bookdeposit",
+  "version": "1.1.2",
+  "description": "Desktop client to make a bagit of books and relative bibliographic metadata.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "build"
+  },
+  "build": {
+    "asar": true,
+    "mac": {
+      "category": "public.app-category.utilities",
+      "target": "dmg"
+    },
+    "win": {
+      "target": "portable"
+    }
+  },
+  "repository": "https://github.com/depositolegale/bookdeposit-desktop",
+  "keywords": [
+    "Electron",
+    "bagit"
+  ],
+  "author": "Deposito Legale",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^1.7.5",
+    "electron-builder": "^19.27.3"
+  },
+  "dependencies": {
+    "bagit-fs": "^1.1.1",
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.2.1",
+    "json-editor": "^0.7.28",
+    "opn": "^5.1.0",
+    "rimraf": "^2.6.1",
+    "slugify": "^1.2.1",
+    "tmp": "0.0.33",
+    "zip-folder": "^1.0.0"
+  }
+}
