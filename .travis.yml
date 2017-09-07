@@ -14,6 +14,13 @@ branches:
   - master
   - develop
 
+before_install:
+  - |
+    if [[ $TRAVIS_OS_NAME == 'linux' ]]; then
+      apt-get -qq update; 
+      sudo apt-get install -y icnsutils graphicsmagick;
+    fi
+    
 install:
   - npm install
 
