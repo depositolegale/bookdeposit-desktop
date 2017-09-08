@@ -1,0 +1,28 @@
+matrix:
+  include:
+    - os: linux
+      language: node_js
+      node_js:
+        - "7"
+    - os: osx
+      language: node_js
+      node_js:
+        - "7"
+
+branches:
+  only:
+  - master
+  - develop
+
+before_install:
+  - |
+    if [[ $TRAVIS_OS_NAME == 'linux' ]]; then
+      apt-get -qq update; 
+      sudo apt-get install -y icnsutils graphicsmagick;
+    fi
+    
+install:
+  - npm install
+
+script:
+  - npm run dist
