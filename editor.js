@@ -36,7 +36,7 @@ exports.editor = new JSONEditor(document.getElementById("editor_holder"), {
       },
       rights: {
         type: "string",
-        enum: ["open access", "closed access"],
+        enum: ["", "open access", "closed access"],
         description: "Licenza"
       },
       date: {
@@ -61,8 +61,7 @@ exports.editor = new JSONEditor(document.getElementById("editor_holder"), {
             },
             name: {
               type: "string",
-              description: "* Nome e cognome",
-              minLength: 1
+              description: "Nome e cognome"
             }
           }
         }
@@ -83,7 +82,11 @@ exports.editor = new JSONEditor(document.getElementById("editor_holder"), {
               enum: ["URL", "ISBN", "ISSN", "DOI", "other"],
               default: "URL"
             },
-            ID: { type: "string" }
+            ID: 
+            { 
+              type: "string",
+              minLength: 1
+            }
           },
           required: ["type"],
           additionalProperties: false
