@@ -76,7 +76,7 @@ editor.on("change", function() {
   
   if (errors.length) {
     indicator.className = "label label-danger";
-    indicator.textContent = "↓ compilare tutti i metadati";
+    indicator.textContent = "↓ compilare tutti i metadati obbligatori (*)";
   } else {
     indicator.className = "label label-success";
     indicator.textContent = "metadati completi";
